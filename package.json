@@ -1,0 +1,19 @@
+{
+	"name": "dragdropgame",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Sneakyhydra/DragDropGame.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Sneakyhydra/DragDropGame/issues"
+	},
+	"homepage": "https://github.com/Sneakyhydra/DragDropGame#readme"
+}
