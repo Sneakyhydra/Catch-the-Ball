@@ -8,17 +8,15 @@ const Alerts = () => {
 	return (
 		alertContext.alerts.length > 0 &&
 		alertContext.alerts.map((alert) => (
-			<div
-				key={alert.id}
-				className={`alert alert-${alert.type}`}
-				style={{
-					margin: '0',
-					zIndex: '10000',
-					position: 'fixed',
-					width: '100%',
-				}}
-			>
-				<span className='material-icons'>info</span>
+			<div key={alert.id} className={`alert alert-${alert.type}`}>
+				<span
+					className='material-icons'
+					style={{
+						paddingBottom: '0.5rem',
+					}}
+				>
+					info
+				</span>
 				{alert.msg}
 			</div>
 		))

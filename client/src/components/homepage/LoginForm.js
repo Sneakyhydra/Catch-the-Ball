@@ -67,7 +67,7 @@ const LoginForm = ({ setIsLogin }) => {
 		if (email === '' || password === '') {
 			// Set state
 			setLogStart(false);
-			setAlert('Please fill in all fields');
+			setAlert('Please fill in all fields', 'danger');
 		} else {
 			// Login user
 			await login(data);
@@ -109,7 +109,7 @@ const LoginForm = ({ setIsLogin }) => {
 			<div className='p-2 flex justify-center flex-col'>
 				<button
 					className='m-auto py-1 px-3 rounded'
-					type='button'
+					type='submit'
 					value='Login'
 					disabled={logStart}
 					style={

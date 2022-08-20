@@ -44,7 +44,7 @@ const Homepage = () => {
 		// If error is not null, display error
 		if (error) {
 			if (error.errors.length > 0) {
-				setAlert(error.errors[0].msg);
+				setAlert(error.errors[0].msg, 'danger');
 			}
 		}
 		// Clear errors

@@ -69,7 +69,7 @@ const RegisterForm = ({ setIsLogin }) => {
 		if (name === '' || email === '' || password === '') {
 			// Set state
 			setRegStart(false);
-			setAlert('Please fill in all fields');
+			setAlert('Please fill in all fields', 'danger');
 		} else {
 			// Signup user
 			await regUser(data);
@@ -126,7 +126,7 @@ const RegisterForm = ({ setIsLogin }) => {
 			<div className='p-2 flex justify-center flex-col'>
 				<button
 					className='m-auto py-1 px-3 rounded'
-					type='button'
+					type='submit'
 					value='SignUp'
 					disabled={regStart}
 					style={
