@@ -71,8 +71,6 @@ router.post(
 				`select User { id, password } filter .email = '${email}'`
 			);
 
-			console.log(user);
-
 			// If user not found
 			if (!user) {
 				return res.status(400).send({ errors: [{ msg: 'User not found' }] });

@@ -71,7 +71,7 @@ const AuthState = (props) => {
 			// Dispatch the action to reducer for REGISTER_FAIL
 			dispatch({
 				type: REGISTER_FAIL,
-				payload: err.response.data.msg,
+				payload: err.response.data,
 			});
 		}
 	};
@@ -101,7 +101,7 @@ const AuthState = (props) => {
 			// Dispatch the action to reducer for LOGIN_FAIL
 			dispatch({
 				type: LOGIN_FAIL,
-				payload: err.response.data.msg,
+				payload: err.response.data,
 			});
 		}
 	};
