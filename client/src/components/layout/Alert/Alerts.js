@@ -18,7 +18,7 @@ const Alerts = () => {
 					width: '100%',
 				}}
 			>
-				<i className='material-icons'>info</i>
+				<span className='material-icons'>info</span>
 				{alert.msg}
 			</div>
 		))
