@@ -9,6 +9,8 @@ import {
 	ADD_RECENT_SCORE_FAIL,
 	GET_RECENT_SCORE_SUCCESS,
 	GET_RECENT_SCORE_FAIL,
+	INCREASE_SCORE,
+	RESET_SCORE,
 } from '../types';
 import axios from 'axios';
 
@@ -19,6 +21,7 @@ const GameState = (props) => {
 	const initialState = {
 		recent: null,
 		error: null,
+		score: 0,
 	};
 
 	// Init Reducer
@@ -90,15 +93,30 @@ const GameState = (props) => {
 		}
 	};
 
+	const increaseScore = () => {
+		dispatch({
+			type: INCREASE_SCORE,
+		});
+	};
+
+	const resetScore = () => {
+		dispatch({
+			type: RESET_SCORE,
+		});
+	};
+
 	return (
 		<GameContext.Provider
 			// Provide these values to all components wrapped in AuthContext in App.js
 			value={{
 				recent: state.recent,
 				error: state.error,
+				score: state.score,
 				getRecentScores,
 				updateHighScore,
 				addRecentScore,
+				increaseScore,
+				resetScore,
 			}}
 		>
 			{props.children}

@@ -5,6 +5,8 @@ import {
 	ADD_RECENT_SCORE_FAIL,
 	GET_RECENT_SCORE_SUCCESS,
 	GET_RECENT_SCORE_FAIL,
+	INCREASE_SCORE,
+	RESET_SCORE,
 } from '../types';
 
 // Change state according to the type of action
@@ -26,6 +28,18 @@ const gameReducer = (state, action) => {
 			return {
 				...state,
 				error: action.payload,
+			};
+
+		case INCREASE_SCORE:
+			return {
+				...state,
+				score: state.score + 1,
+			};
+
+		case RESET_SCORE:
+			return {
+				...state,
+				score: 0,
 			};
 
 		default:

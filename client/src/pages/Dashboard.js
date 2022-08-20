@@ -21,14 +21,20 @@ const Dashboard = () => {
 	const gameContext = useContext(GameContext);
 
 	const { isAuthenticated, user, validate, loadUser, logout } = authContext;
-	const { updateHighScore, addRecentScore, getRecentScores, recent } =
-		gameContext;
+	const {
+		updateHighScore,
+		addRecentScore,
+		getRecentScores,
+		recent,
+		score,
+		increaseScore,
+		resetScore,
+	} = gameContext;
 
 	// Initialize navigate
 	const navigate = useNavigate();
 	// Initialize state
 	const [screen, setScreen] = useState('ready');
-	const [score, setScore] = useState(0);
 
 	useEffect(() => {
 		// Validate user
@@ -56,7 +62,7 @@ const Dashboard = () => {
 
 	return (
 		<>
-			<div className='flex justify-between border-b-2 border-black items-center py-1'>
+			<div className='flex justify-between border-b-2 border-black items-center py-1 bg-slate-300'>
 				<h1 className='ml-5 text-lg font-bold my-auto'>
 					High Score: {user.high_score}
 				</h1>
@@ -69,9 +75,13 @@ const Dashboard = () => {
 			</div>
 
 			{screen === 'ready' ? (
-				<Startscreen setScreen={setScreen} setScore={setScore} />
+				<Startscreen setScreen={setScreen} resetScore={resetScore} />
 			) : screen === 'game' ? (
-				<Game setScreen={setScreen} score={score} setScore={setScore} />
+				<Game
+					setScreen={setScreen}
+					score={score}
+					increaseScore={increaseScore}
+				/>
 			) : (
 				<>
 					<Endscreen

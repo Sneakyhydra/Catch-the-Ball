@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-const Startscreen = ({ setScreen, setScore }) => {
+const Startscreen = ({ setScreen, resetScore }) => {
 	useEffect(() => {
-		setScore(0);
+		resetScore();
 
 		// eslint-disable-next-line
 	}, []);

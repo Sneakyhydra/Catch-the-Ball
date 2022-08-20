@@ -18,3 +18,43 @@
 .alert-warning {
 	background-color: #f39c12;
 }
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+.moveBucket {
+	animation-name: bucket;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+}
+
+@keyframes bucket {
+	from {
+		transform: translateX(-20vw);
+	}
+	to {
+		transform: translateX(20vw);
+	}
+}
+
+.moveBall {
+	animation-name: ball;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+}
+
+@keyframes ball {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(80vh);
+	}
+}
