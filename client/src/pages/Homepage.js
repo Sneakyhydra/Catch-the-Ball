@@ -1,11 +1,12 @@
 // Hooks
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 
 // Routing
 import { useNavigate } from 'react-router';
 
 // Components
 import LoginForm from '../components/homepage/LoginForm';
+import RegisterForm from '../components/homepage/RegisterForm';
 
 // Contexts
 import AlertContext from '../context/alert/alertContext';
@@ -22,6 +23,9 @@ const Homepage = () => {
 	const { setAlert } = alertContext;
 
 	const { error, clearErrors, validate, isAuthenticated } = authContext;
+
+	const [isLogin, setIsLogin] = useState(true);
+
 	// Initialize navigate
 	const navigate = useNavigate();
 
@@ -52,7 +56,11 @@ const Homepage = () => {
 	return (
 		<div>
 			<div>
-				<LoginForm />
+				{isLogin ? (
+					<LoginForm setIsLogin={setIsLogin} />
+				) : (
+					<RegisterForm setIsLogin={setIsLogin} />
+				)}
 			</div>
 		</div>
 	);
