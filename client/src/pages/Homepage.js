@@ -12,11 +12,7 @@ import RegisterForm from '../components/homepage/RegisterForm';
 import AlertContext from '../context/alert/alertContext';
 import AuthContext from '../context/auth/authContext';
 
-// CSS
-// import styles from './CSS/Homepage.module.css';
-
 const Homepage = () => {
-	// Destructure auth from props
 	const alertContext = useContext(AlertContext);
 	const authContext = useContext(AuthContext);
 
