@@ -84,6 +84,13 @@ router.get('/recent', auth, async (req, res) => {
 			`select Recent { score, player, time } ORDER BY .time DESC limit 10;`
 		);
 
+		for (let i = 0; i < scores.length; i++) {
+			const name = await db.querySingle(
+				`select User { name } filter .id = <uuid>'${scores[i].player.id}'`
+			);
+			scores[i].name = name.name;
+		}
+
 		return res.send(scores);
 	} catch (err) {
 		// Return error

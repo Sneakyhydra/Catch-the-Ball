@@ -15,6 +15,8 @@ module default {
         property time -> datetime {
             default := datetime_current();
         };
-        required link player -> User;
+        required link player -> User {
+            property name -> str;
+        };
     }
 }

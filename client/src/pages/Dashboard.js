@@ -6,21 +6,28 @@ import { useNavigate } from 'react-router';
 
 // Contexts
 import AuthContext from '../context/auth/authContext';
+import GameContext from '../context/game/gameContext';
 
 // Screens
 import Startscreen from '../components/dashboard/Startscreen';
 import Game from '../components/dashboard/Game';
 import Endscreen from '../components/dashboard/Endscreen';
 
+// Components
+import Recentscores from '../components/dashboard/Recentscores';
+
 const Dashboard = () => {
 	const authContext = useContext(AuthContext);
+	const gameContext = useContext(GameContext);
 
 	const { isAuthenticated, user, validate, loadUser, logout } = authContext;
+	const { updateHighScore, addRecentScore, getRecentScores, recent } =
+		gameContext;
 
 	// Initialize navigate
 	const navigate = useNavigate();
 	// Initialize state
-	const [screen, setScreen] = useState('endscreen');
+	const [screen, setScreen] = useState('ready');
 	const [score, setScore] = useState(0);
 
 	useEffect(() => {
@@ -66,7 +73,16 @@ const Dashboard = () => {
 			) : screen === 'game' ? (
 				<Game setScreen={setScreen} score={score} setScore={setScore} />
 			) : (
-				<Endscreen setScreen={setScreen} score={score} />
+				<>
+					<Endscreen
+						setScreen={setScreen}
+						score={score}
+						hscore={user.high_score}
+						updateHighScore={updateHighScore}
+						addRecentScore={addRecentScore}
+					/>
+					<Recentscores getRecentScores={getRecentScores} recent={recent} />
+				</>
 			)}
 		</>
 	);

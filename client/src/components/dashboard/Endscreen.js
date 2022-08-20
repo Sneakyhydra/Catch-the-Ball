@@ -1,7 +1,24 @@
-const Endscreen = ({ setScreen, score }) => {
+import { useEffect } from 'react';
+
+const Endscreen = ({
+	setScreen,
+	score,
+	hscore,
+	updateHighScore,
+	addRecentScore,
+}) => {
+	useEffect(() => {
+		if (score > hscore) {
+			updateHighScore({ score });
+		}
+		addRecentScore({ score });
+		// eslint-disable-next-line
+	}, []);
+
 	const onClick = () => {
 		setScreen('ready');
 	};
+
 	return (
 		<div className='flex flex-col items-center mt-10'>
 			<h1 className='text-center text-4xl'>Score: {score}</h1>
