@@ -20,7 +20,8 @@ const Dashboard = () => {
 	// Initialize navigate
 	const navigate = useNavigate();
 	// Initialize state
-	const [screen, setScreen] = useState('ready');
+	const [screen, setScreen] = useState('endscreen');
+	const [score, setScore] = useState(0);
 
 	useEffect(() => {
 		// Validate user
@@ -61,11 +62,11 @@ const Dashboard = () => {
 			</div>
 
 			{screen === 'ready' ? (
-				<Startscreen setScreen={setScreen} />
+				<Startscreen setScreen={setScreen} setScore={setScore} />
 			) : screen === 'game' ? (
-				<Game setScreen={setScreen} />
+				<Game setScreen={setScreen} score={score} setScore={setScore} />
 			) : (
-				<Endscreen setScreen={setScreen} />
+				<Endscreen setScreen={setScreen} score={score} />
 			)}
 		</>
 	);

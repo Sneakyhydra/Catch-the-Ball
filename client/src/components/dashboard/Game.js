@@ -1,4 +1,4 @@
-const Game = () => {
+const Game = ({ score, setScore, setScreen }) => {
 	return <div>Game</div>;
 };
 
