@@ -15,6 +15,8 @@ app.use(cors());
 app.use(cookieParser());
 
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/game', require('./routes/game'));
 
 /**
  * Serve static assets in production
