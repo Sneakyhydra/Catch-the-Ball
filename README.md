@@ -1,4 +1,4 @@
-# DragDropGame
+# Catch the Ball
 
 Steps to run dev server -
 

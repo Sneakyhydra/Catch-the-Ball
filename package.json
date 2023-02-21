@@ -1,5 +1,5 @@
 {
-	"name": "dragdropgame",
+	"name": "catch-the-ball",
 	"version": "1.0.0",
 	"description": "",
 	"main": "server.js",
@@ -13,14 +13,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Sneakyhydra/DragDropGame.git"
+		"url": "git+https://github.com/Sneakyhydra/Catch-the-Ball.git"
 	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Sneakyhydra/DragDropGame/issues"
+		"url": "https://github.com/Sneakyhydra/Catch-the-Ball/issues"
 	},
-	"homepage": "https://github.com/Sneakyhydra/DragDropGame#readme",
+	"homepage": "https://github.com/Sneakyhydra/Catch-the-Ball#readme",
 	"devDependencies": {
 		"concurrently": "^7.3.0",
 		"nodemon": "^2.0.19"
