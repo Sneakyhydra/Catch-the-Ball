@@ -1,11 +1,14 @@
-# Catch the Ball
+## Description
 
-Steps to run dev server -
+A simple drag drop game built with React, Node and EdgeDB.
 
-1. Clone the repo.
-2. Open a terminal in the root folder of the cloned repo.
-3. Run command "npm run install-all" without the quotes.
-4. Run command "edgedb project init" without the quotes.
-5. Run command "npm run dev" without the quotes. This will run the client and server in the same terminal.
+## Development Environment Setup
+
+1. Install NodeJs and add to path
+2. Open terminal in the project directory.
+3. Type npm run install-all
+4. Type edgedb project init
+5. Type npm run dev
+6. You can now use the application.
 
 Note - There will be no data in the database initially. So you will have to signup.
